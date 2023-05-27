@@ -1,6 +1,7 @@
 const data = [
   {
     id: 12345,
+    email: 'rmakxh@efef.wf',
     username: '지짐이',
     name: '장현우',
     password: '12345',
@@ -9,6 +10,7 @@ const data = [
   },
   {
     id: 6142,
+    email: 'rmakxh@efef.wf',
     username: '반반',
     name: '민국',
     password: '12345',
@@ -17,6 +19,7 @@ const data = [
   },
   {
     id: 1235,
+    email: 'rmakxh@efef.wf',
     username: 'ellie',
     name: '대한',
     password: '12345',
@@ -26,13 +29,15 @@ const data = [
 ];
 
 export async function findById(id) {
-  return data.find(({ _id }) => _id === id);
+  return data.find(user => user.id === id);
 }
 
-export async function findByUsername(username) {
-  return data.find(({ _username }) => _username === username);
+export async function findByEmail(email) {
+  return data.find(user => user.email === email);
 }
 
 export async function createUser(user) {
-  data.push(user);
+  const id = Date.now();
+  data.push({ ...user, id });
+  return id;
 }
