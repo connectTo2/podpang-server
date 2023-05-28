@@ -16,6 +16,8 @@
     // "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
     // "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
     // "no-var": "off",
+    "no-use-before-define": "off",
+    "import/extensions": "off",
     "no-console": "warn",
     "no-plusplus": "off",
     "no-shadow": "off",
@@ -40,7 +42,7 @@
         "allowTaggedTemplates": true
       }
     ],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": "off",
     "max-len": [
       "error",
       {
